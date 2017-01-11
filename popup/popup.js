@@ -18,9 +18,6 @@ window.addEventListener('load', function(evt) {
     } else {
       arrayImages.push(images);
     }
-
-    alert(images);
-
     chrome.storage.local.set({ 'images': arrayImages });
   });
 

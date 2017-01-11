@@ -1,1 +1,7 @@
-# Troll Chrome Images # 
+# Troll Chrome Images #
+
+## Build
+```sh
+npm install
+gulp zip
+```

@@ -1,0 +1,27 @@
+{
+  "name": "troll-chrome-images",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-zip": "^3.2.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-zip": "^3.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabiohbarbosa/troll-chrome-images.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabiohbarbosa/troll-chrome-images/issues"
+  },
+  "homepage": "https://github.com/fabiohbarbosa/troll-chrome-images#readme"
+}
