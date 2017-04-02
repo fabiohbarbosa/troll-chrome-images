@@ -3,4 +3,4 @@
 ## Build
 To build and generate package run: `npm run build`.
 
-After see package in *dist/* folder.
+After, see package in *dist/* folder.
