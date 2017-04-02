@@ -1,7 +1,6 @@
 # Troll Chrome Images #
 
 ## Build
-```sh
-npm install
-gulp zip
-```
+To build and generate package run: `npm run build`.
+
+After see package in *dist/* folder.
