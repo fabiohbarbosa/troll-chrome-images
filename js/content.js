@@ -12,7 +12,10 @@ function changeImages(images) {
     var height = style.height;
     var width = style.width;
 
-    img.src = randomImage(images);
+    var newImage = randomImage(images);
+    if (!newImage) return;
+
+    img.src = newImage;
 
     img.style.maxHeight = '100%';
     img.style.maxWidth = '100%';

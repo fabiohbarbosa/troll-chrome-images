@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Troll Chrome Images",
   "description": "Troque todas as fotos dos sites por fotos pré-selecionadas",
-  "version": "0.1",
+  "version": "0.4",
   "background": {
     "scripts": ["js/background.js"],
     "persistent": false
