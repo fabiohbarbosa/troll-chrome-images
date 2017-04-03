@@ -3,12 +3,8 @@
   "version": "0.0.4",
   "description": "Troll chrome images with any images",
   "main": "gulpfile.js",
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-zip": "^3.2.0"
-  },
   "scripts": {
-    "build": "npm install --verbose && gulp zip",
+    "build": "npm install && gulp zip",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/fabiohbarbosa/troll-chrome-images/issues"
   },
-  "homepage": "https://github.com/fabiohbarbosa/troll-chrome-images#readme"
+  "homepage": "https://github.com/fabiohbarbosa/troll-chrome-images#readme",
+  "devDependencies": {
+    "gulp-clean": "^0.3.2",
+    "gulp-copy": "^1.0.0",
+    "gulp-sync": "^0.1.4",
+    "gulp-zip": "^3.2.0"
+  }
 }
