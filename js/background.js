@@ -1,9 +1,7 @@
 function executeScript(tabId, callback) {
   if (!tabId) return;
-  chrome.tabs.executeScript(tabId, { file: "js/jquery.js" }, function() {
-    chrome.tabs.executeScript(tabId, { file: 'js/content.js' }, function() {
-      callback();
-    });
+  chrome.tabs.executeScript(tabId, { file: 'js/content.js' }, function() {
+    callback();
   });
 }
 

@@ -1,15 +1,13 @@
 // When the popup HTML has loaded
 window.addEventListener('load', function (evt) {
 
-  // document.getElementById('mesage').style.display = 'none';
-
   chrome.storage.local.get('images', function (result) {
     if (!result.images) return;
     document.getElementById('images').innerHTML = result.images;
   });
 
-  document.getElementById('form').addEventListener('submit', function () {
-    return;
+  // save
+  document.getElementById('save').onclick = function () {
     var images = document.getElementById('images').value;
 
     var arrayImages = [];
@@ -23,12 +21,25 @@ window.addEventListener('load', function (evt) {
       arrayImages.push(images);
     }
     chrome.storage.local.set({ 'images': arrayImages });
-    document.getElementById('message').style.display = 'inline';
-  });
+    showMessage('Saved!', 'ok');
+    window.close();
+  };
 
+  // clear
   document.getElementById('clear').onclick = function () {
     document.getElementById('images').value = null;
+    chrome.storage.local.set({ 'images': null });
+    showMessage('Cleared!', 'remove');
+    window.close();
   }
 
+  document.getElementById('close-button').onclick = function() {
+    window.close();
+  }
+
+  function showMessage(msg, icon) {
+    document.getElementById('message').innerHTML = '<i class="glyphicon glyphicon-'+icon+'"></i> ' + msg;
+    document.getElementById('message').style.display = 'inline';
+  }
 
 });

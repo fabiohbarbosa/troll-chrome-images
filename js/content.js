@@ -4,7 +4,7 @@ function changeImages(images) {
   var src = [];
   var index = 0;
 
-  var allImg = document.getElementsByTagName("img"), i = 0 , img;
+  var allImg = document.getElementsByTagName("img"), i = 0, img;
 
   while (img = allImg[i++]) {
     var style = img.style;
@@ -35,7 +35,7 @@ chrome.runtime.sendMessage({
   'summary': window.getSelection().toString()
 });
 
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   var index = changeImages(request.images);
-  sendResponse({totalImg: index});
+  sendResponse({ totalImg: index });
 });

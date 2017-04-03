@@ -3,28 +3,31 @@
 
 <head>
 
-<style type="text/css">
-        @font-face {
-            font-family: 'Glyphicons';
-            src: url('../assets/fonts/glyphicons-halflings-regular.eot');
-        }
- </style>
+  <style type="text/css">
+    @font-face {
+      font-family: 'Glyphicons';
+      src: url('../assets/fonts/glyphicons-halflings-regular.eot');
+    }
+  </style>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="popup.css">
 </head>
 
 <body>
   <main class="container">
+
+    <button id="close-button" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
     <form id="form">
       <legend>URL images</legend>
-      <span><i>Separate the images by comma</i></span>
+      <span><i>Separate the images URL by comma.</i></span>
 
       <div class="form-group">
         <textarea id="images" name="images" class="form-control" rows="6" cols="35"></textarea>
       </div>
-      <input id="save" type="submit" class="btn btn-primary" value="Save" />
-      <input id="clear" type="submit" class="btn btn-danger" value="Clear" />
-      <span id="message" class="small" style="display: none"> <i class="glyphicon glyphicon-ok"></i> Success !! </span>
+      <button id="save" type="button" class="btn btn-primary">Save</button>
+      <button id="clear" type="button" class="btn btn-danger">Clear</button>
+      <span id="message" class="small" style="display: none"> <i class="glyphicon glyphicon-ok"></i> Save !! </span>
     </form>
   </main>
   <script src="popup.js"></script>
