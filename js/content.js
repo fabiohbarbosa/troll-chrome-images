@@ -1,5 +1,6 @@
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  changeImages();
+  if (request == true)
+    changeImages();
 });
 
 function changeImages() {

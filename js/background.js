@@ -1,30 +1,17 @@
 chrome.tabs.onActivated.addListener((activeInfo) => {
   let tabId = activeInfo.tabId;
-  changeImages(tabId);
+  publishTabEvent(tabId);
 });
 
 chrome.tabs.onUpdated.addListener((tabId) => {
-  changeImages(tabId);
+  publishTabEvent(tabId);
 });
 
 
-function executeScript(tabId, callback) {
+function publishTabEvent(tabId) {
   if (!tabId) return;
-  chrome.tabs.executeScript(tabId, { file: 'js/content.js' }, () => callback());
-}
-
-function changeImages(tabId) {
-  executeScript(tabId, () => {
-    chrome.storage.local.get('images', (result) => {
-      if (!result || !result.images || result.images.length == 0) return;
-
-      let message = {
-        images: result.images
-      };
-
-      // send images to content.js
-      chrome.tabs.sendMessage(tabId, message);
-    });
+  chrome.tabs.executeScript(tabId, { file: 'js/content.js' }, () => {
+    chrome.tabs.sendMessage(tabId, true);
   });
 }
 
