@@ -1,41 +1,30 @@
-// Send a message containing the page details back to the event page
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  changeImages();
+});
 
-function changeImages(images) {
-  var src = [];
-  var index = 0;
+function changeImages() {
+  chrome.storage.local.get('images', (result) => {
+    if (!result || !result.images) return;
+    let images = result.images;
+    let allImg = document.getElementsByTagName("img"), i = 0, img;
 
-  var allImg = document.getElementsByTagName("img"), i = 0, img;
+    while (img = allImg[i++]) {
+      let style = img.style;
 
-  while (img = allImg[i++]) {
-    var style = img.style;
+      let height = style.height;
+      let width = style.width;
 
-    var height = style.height;
-    var width = style.width;
+      let newImage = randomImage(images);
+      if (!newImage) return;
 
-    var newImage = randomImage(images);
-    if (!newImage) return;
+      img.src = newImage;
 
-    img.src = newImage;
-
-    img.style.maxHeight = '100%';
-    img.style.maxWidth = '100%';
-
-    index++;
-  }
-  return index;
+      img.style.maxHeight = '100%';
+      img.style.maxWidth = '100%';
+    }
+  });
 }
 
 function randomImage(images) {
   return images[Math.floor((Math.random() * images.length))];
 }
-
-chrome.runtime.sendMessage({
-  'title': document.title,
-  'url': window.location.href,
-  'summary': window.getSelection().toString()
-});
-
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  var index = changeImages(request.images);
-  sendResponse({ totalImg: index });
-});
