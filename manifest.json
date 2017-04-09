@@ -21,7 +21,6 @@
     "storage",
     "http://*/*",
     "https://*/*",
-    "<all_urls>",
     "contextMenus"
   ]
 }

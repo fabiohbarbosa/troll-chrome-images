@@ -1,3 +1,8 @@
 {
+    "files.exclude": {
+        "**/.history": true,
+        "**/dist": true,
+        "**/node_modules": true
+    },
     "vsicons.presets.angular": false
 }
